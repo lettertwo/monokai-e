@@ -11,9 +11,12 @@
     color: @black;
   }
 
-  .cursor-line .invisible-character,
-  .indent-guide {
+  .cursor-line .invisible-character {
     color: fade(@off-white, 20%);
+  }
+
+  .indent-guide {
+    box-shadow: inset 1px 0 fade(@off-white, 10%);
   }
 
   .wrap-guide,
