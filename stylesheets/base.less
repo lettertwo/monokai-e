@@ -1,0 +1,250 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/stylesheets/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+@import "colors";
+
+.editor {
+
+  .invisible-character {
+    color: @black;
+  }
+
+  .cursor-line .invisible-character,
+  .indent-guide {
+    color: fade(@off-white, 20%);
+  }
+
+  .wrap-guide,
+  .bracket-matcher {
+    border: none;
+    background-color: fade(@off-white, 20%);
+  }
+
+  .trailing-whitespace {
+    background-color: @magenta;
+  }
+
+  &, .gutter {
+    background-color: @black;
+    color: @off-white;
+  }
+
+  &.is-focused .cursor {
+    border-color: @blue;
+  }
+
+  &.is-focused .selection .region {
+    background-color: @gray;
+  }
+
+  &.is-focused .line-number.cursor-line-no-selection {
+    background-color: @gray;
+  }
+
+  .comment {
+    color: @brown;
+  }
+
+  .string {
+    color: @yellow;
+  }
+
+  .constant.numeric {
+    color: @violet;
+  }
+
+  .constant.language,
+  .meta.preprocessor {
+    color: @violet;
+  }
+
+  .constant.character,
+  .constant.other {
+    color: @violet;
+  }
+
+  .variable.language,
+  .variable.other  {
+    color: @off-white;
+  }
+
+  .keyword {
+    color: @magenta
+  }
+
+  .storage {
+    color: @magenta
+  }
+
+  .storage.type {
+    font-style: italic;
+    color: @cyan;
+  }
+
+  .entity.name.class {
+    text-decoration: underline;
+    color: @green
+  }
+
+  .entity.other.inherited-class {
+    font-style: italic;
+    text-decoration: underline;
+    color: @green
+  }
+
+  .entity.name.function {
+    color: @green
+  }
+
+  .variable.parameter {
+    font-style: italic;
+    color: @orange
+  }
+
+  .entity.name.tag {
+    color: @magenta
+  }
+
+  .entity.other.attribute-name {
+    color: @green
+  }
+
+  .support.function {
+    color: @cyan;
+  }
+
+  .support.constant {
+    color: @cyan;
+  }
+
+  .support.type,
+  .support.class {
+    font-style: italic;
+    color: @cyan;
+  }
+
+  .invalid {
+    color: @white;
+    background-color: @magenta
+  }
+
+  .invalid.deprecated {
+    color: @white;
+    background-color: @violet;
+  }
+
+  /* General markup */
+  .markup.heading {
+    color: @orange;
+  }
+
+  .markup.italic {
+    font-style: italic;
+    color: @yellow;
+  }
+
+  .markup.bold {
+    font-weight: bold;
+    color: @yellow;
+  }
+
+  .markup.underline {
+    text-decoration: underline;
+    color: @magenta;
+  }
+
+  .markup.quote {
+    font-style: italic;
+    color: @cyan;
+  }
+
+  /* Markdown-specific */
+  .gfm {
+    color: @off-white;
+
+    &.support {
+      color: @yellow;
+    }
+
+    &.entity {
+      color: @yellow;
+    }
+
+    &.raw {
+      color: @yellow;
+    }
+
+    &.code {
+      color: @off-white;
+    }
+
+    &.emoji {
+      color: @yellow;
+
+      .word {
+        color: @magenta;
+      }
+    }
+
+    &.link {
+      color: @magenta;
+
+      .string {
+        color: @yellow;
+      }
+    }
+
+    &.list {
+      color: @blue;
+    }
+
+    &.quote {
+      .markup.quote();
+    }
+  }
+
+  /* Litcoffee-specific */
+  .source.litcoffee {
+
+    .markdown.meta {
+      color: fade(@off-white, 50%);
+    }
+
+    .markdown.string,
+    .markdown.bold,
+    .markdown.italic,
+    .markdown.raw.inline {
+      color: fade(@yellow, 50%);
+    }
+
+    .markdown.punctuation {
+      color: fade(@orange, 50%);
+
+      &.list_item {
+        color: fade(@blue, 50%);
+      }
+
+    }
+
+    .markdown.heading {
+      color: fade(@orange, 50%);
+    }
+
+    .markdown.punctuation.blockquote,
+    .markdown.quote {
+      color: fade(@cyan, 75%);
+      font-style: italic;
+    }
+
+    .markdown.link {
+      color: fade(@green, 50%);
+
+      &.title,
+      &.description {
+        color: fade(@orange, 50%);
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Monokai-E",
+  "theme": "syntax",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A custom version of the Monokai TextMate theme for Atom.",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/lettertwo/atom-monokai-e/issues"
+  },
+  "homepage": "https://github.com/lettertwo/atom-monokai-e",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lettertwo/atom-monokai-e"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}
