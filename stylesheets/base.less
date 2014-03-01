@@ -34,16 +34,19 @@
     color: @off-white;
   }
 
-  &.is-focused .cursor {
-    border-color: @blue;
-  }
+  &.is-focused {
 
-  &.is-focused .selection .region {
-    background-color: @gray;
-  }
+    .cursor {
+      border-color: @blue;
+    }
 
-  &.is-focused .line-number.cursor-line-no-selection {
-    background-color: @gray;
+    .selection .region {
+      background-color: @gray;
+    }
+
+    .line-number.cursor-line-no-selection {
+      background-color: @gray;
+    }
   }
 
   .comment {
@@ -52,25 +55,24 @@
 
   .string {
     color: @yellow;
+    color: lighten(@gray, 35%);
   }
 
-  .constant.numeric {
+  .variable {
+
+    &:not(.assignment) {
+      color: @yellow;
+    }
+
+    &.magic,
+    &.parameter {
+      font-style: italic;
+      color: @orange
+    }
+  }
+
+  .constant {
     color: @violet;
-  }
-
-  .constant.language,
-  .meta.preprocessor {
-    color: @violet;
-  }
-
-  .constant.character,
-  .constant.other {
-    color: @violet;
-  }
-
-  .variable.language,
-  .variable.other  {
-    color: @off-white;
   }
 
   .keyword {
@@ -78,89 +80,74 @@
   }
 
   .storage {
-    color: @magenta
+    color: @magenta;
+
+    &.type {
+      font-style: italic;
+      color: @cyan;
+    }
   }
 
-  .storage.type {
-    font-style: italic;
+  .entity {
+    color: @green;
+
+    &.other.inherited-class {
+      font-style: italic;
+    }
+
+    &.name.tag {
+      color: @magenta;
+    }
+  }
+
+  .support {
     color: @cyan;
-  }
 
-  .entity.name.class {
-    text-decoration: underline;
-    color: @green
-  }
-
-  .entity.other.inherited-class {
-    font-style: italic;
-    text-decoration: underline;
-    color: @green
-  }
-
-  .entity.name.function {
-    color: @green
-  }
-
-  .variable.parameter {
-    font-style: italic;
-    color: @orange
-  }
-
-  .entity.name.tag {
-    color: @magenta
-  }
-
-  .entity.other.attribute-name {
-    color: @green
-  }
-
-  .support.function {
-    color: @cyan;
-  }
-
-  .support.constant {
-    color: @cyan;
-  }
-
-  .support.type,
-  .support.class {
-    font-style: italic;
-    color: @cyan;
+    &.type,
+    &.class {
+      font-style: italic;
+    }
   }
 
   .invalid {
     color: @white;
-    background-color: @magenta
+    background-color: @magenta;
+
+    &.deprecated {
+      background-color: @violet;
+    }
   }
 
-  .invalid.deprecated {
-    color: @white;
-    background-color: @violet;
+  .meta.preprocessor {
+    color: @violet;
   }
 
   /* General markup */
-  .markup.heading {
-    color: @orange;
-  }
+  .markup {
 
-  .markup.italic {
-    font-style: italic;
-    color: @yellow;
-  }
+    &.heading {
+      color: @orange;
+    }
 
-  .markup.bold {
-    font-weight: bold;
-    color: @yellow;
-  }
+    &.italic {
+      font-style: italic;
+      color: @yellow;
+    }
 
-  .markup.underline {
-    text-decoration: underline;
-    color: @magenta;
-  }
+    &.bold {
+      font-weight: bold;
+      color: @yellow;
+    }
 
-  .markup.quote {
-    font-style: italic;
-    color: @cyan;
+    &.underline {
+      text-decoration: underline;
+      color: @magenta;
+    }
+
+    &.quote {
+      font-style: italic;
+      color: @cyan;
+    }
   }
 
   /* Markdown-specific */
@@ -209,20 +196,20 @@
   }
 
   /* Litcoffee-specific */
-  .source.litcoffee {
+  .source.litcoffee .markdown {
 
-    .markdown.meta {
+    &.meta {
       color: fade(@off-white, 50%);
     }
 
-    .markdown.string,
-    .markdown.bold,
-    .markdown.italic,
-    .markdown.raw.inline {
+    &.string,
+    &.bold,
+    &.italic,
+    &.raw.inline {
       color: fade(@yellow, 50%);
     }
 
-    .markdown.punctuation {
+    &.punctuation {
       color: fade(@orange, 50%);
 
       &.list_item {
@@ -231,17 +218,17 @@
 
     }
 
-    .markdown.heading {
+    &.heading {
       color: fade(@orange, 50%);
     }
 
-    .markdown.punctuation.blockquote,
-    .markdown.quote {
+    &.punctuation.blockquote,
+    &.quote {
       color: fade(@cyan, 75%);
       font-style: italic;
     }
 
-    .markdown.link {
+    &.link {
       color: fade(@green, 50%);
 
       &.title,
