@@ -5,33 +5,41 @@
 @import "ui-variables";
 @import "colors";
 
-.editor {
+.error {
+  background-color: @red;
+}
+
+.warning {
+  background-color: @orange;
+}
+
+.editor:not(.mini) {
 
   .invisible-character {
     color: @black;
   }
 
   .cursor-line .invisible-character {
-    color: fade(@off-white, 20%);
+    color: lighten(@brightblack, 10%);
   }
 
   .indent-guide {
-    box-shadow: inset 1px 0 fade(@off-white, 10%);
+    box-shadow: inset 1px 0 fadeout(@brightblack, 35%);
   }
 
   .wrap-guide,
   .bracket-matcher {
     border: none;
-    background-color: fade(@off-white, 20%);
+    background-color: @brightblack;
   }
 
   .trailing-whitespace {
-    background-color: @magenta;
+    .error();
   }
 
   &, .gutter {
     background-color: @black;
-    color: @off-white;
+    color: @white;
   }
 
   &.is-focused {
@@ -41,27 +49,31 @@
     }
 
     .selection .region {
-      background-color: @gray;
+      background-color: @brightblack;
     }
 
     .line-number.cursor-line-no-selection {
-      background-color: @gray;
+      background-color: @brightblack;
     }
   }
 
   .comment {
-    color: @brown;
+    color: darken(@white, 38%);
   }
 
   .string {
     color: @yellow;
-    color: lighten(@gray, 35%);
+
+    .embedded {
+      color: @orange;
+    }
   }
 
   .variable {
 
     &:not(.assignment) {
       color: @yellow;
+      font-weight: bold;
     }
 
     &.magic,
@@ -76,7 +88,7 @@
   }
 
   .keyword {
-    color: @magenta
+    color: @magenta;
   }
 
   .storage {
@@ -110,16 +122,23 @@
   }
 
   .invalid {
-    color: @white;
-    background-color: @magenta;
+    .error();
+    color: @brightwhite;
 
     &.deprecated {
-      background-color: @violet;
+      .warning();
     }
   }
 
-  .meta.preprocessor {
-    color: @violet;
+  .meta {
+
+    .tag.sgml {
+      color: @orange;
+    }
+
+    .preprocessor {
+      color: @violet;
+    }
   }
 
   /* General markup */
@@ -152,7 +171,7 @@
 
   /* Markdown-specific */
   .gfm {
-    color: @off-white;
+    color: @white;
 
     &.support {
       color: @yellow;
@@ -167,7 +186,7 @@
     }
 
     &.code {
-      color: @off-white;
+      color: @white;
     }
 
     &.emoji {
@@ -199,7 +218,7 @@
   .source.litcoffee .markdown {
 
     &.meta {
-      color: fade(@off-white, 50%);
+      color: fade(@white, 50%);
     }
 
     &.string,
@@ -236,5 +255,13 @@
         color: fade(@orange, 50%);
       }
     }
+  }
+}
+
+// vim-mode-specific
+.vim-mode.command-mode:not(.mini) {
+  .cursor,
+  .cursor.blink-off {
+    background-color: fadeout(@white, 30%);
   }
 }
