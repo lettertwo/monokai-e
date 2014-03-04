@@ -71,7 +71,7 @@
 
   .variable {
 
-    &:not(.assignment) {
+    &:not(.assignment):not(.parameter):not(.magic) {
       color: @yellow;
       font-weight: bold;
     }
