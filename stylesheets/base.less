@@ -262,6 +262,9 @@
 .vim-mode.command-mode:not(.mini) {
   .cursor,
   .cursor.blink-off {
-    background-color: fadeout(@white, 30%);
+    background: none;
+  }
+  .cursor {
+    background-color: @blue;
   }
 }
