@@ -85,6 +85,14 @@
 
   .constant {
     color: @violet;
+
+    &.language {
+      font-weight: bold;
+    }
+
+    &.placeholder {
+      color: @orange;
+    }
   }
 
   .keyword {
@@ -141,7 +149,35 @@
     }
   }
 
-  /* General markup */
+  /* json */
+  .json {
+
+    .string {
+      color: @white;
+
+      > .punctuation {
+        color: fadeout(@white, 38%);
+      }
+    }
+
+    .punctuation.dictionary,
+    .punctuation.array {
+      font-weight: bold;
+    }
+
+    .value {
+
+      > .string {
+        color: @yellow;
+
+        > .punctuation {
+          color: @yellow;
+        }
+      }
+    }
+  }
+
+  /* markup */
   .markup {
 
     &.heading {
@@ -169,7 +205,7 @@
     }
   }
 
-  /* Markdown-specific */
+  /* markdown */
   .gfm {
     color: @white;
 
@@ -214,7 +250,7 @@
     }
   }
 
-  /* Litcoffee-specific */
+  /* litcoffee */
   .source.litcoffee .markdown {
 
     &.meta {
@@ -258,12 +294,14 @@
   }
 }
 
-// vim-mode-specific
+/* vim mode */
 .vim-mode.command-mode:not(.mini) {
+
   .cursor,
   .cursor.blink-off {
     background: none;
   }
+
   .cursor {
     background-color: @blue;
   }
