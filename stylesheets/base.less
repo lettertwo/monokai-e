@@ -49,11 +49,23 @@
     }
 
     .selection .region {
+      background-color: fadeout(@blue, 50%);
+    }
+
+    .cursor-line,
+    .line-number.cursor-line-no-selection {
       background-color: @brightblack;
     }
 
-    .line-number.cursor-line-no-selection {
-      background-color: @brightblack;
+    /* vim mode */
+    &.vim-mode.command-mode {
+
+      .cursor.idle,
+      .cursor.idle.blink-off {
+        background: none;
+        background-color: fadeout(@blue, 50%);
+        opacity: 1;
+      }
     }
   }
 
@@ -295,18 +307,5 @@
         color: fade(@orange, 50%);
       }
     }
-  }
-}
-
-/* vim mode */
-.vim-mode.command-mode:not(.mini) {
-
-  .cursor,
-  .cursor.blink-off {
-    background: none;
-  }
-
-  .cursor {
-    background-color: @blue;
   }
 }
