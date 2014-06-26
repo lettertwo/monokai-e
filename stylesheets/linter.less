@@ -1,8 +1,5 @@
 @import "colors";
 
-@error-color: @magenta;
-@warning-color: @orange;
-
 .linter-warning:before {
   color: @warning-color;
 }
@@ -12,7 +9,7 @@
 }
 
 .linter-statusbar {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .linter-highlight {
@@ -32,7 +29,7 @@
   }
 
   &.error .region {
-    background: fadeout(@error-color, 75%);
+    background: fadeout(@error-color, 50%);
     border: none;
   }
 }

@@ -6,14 +6,6 @@
 @import "colors";
 @import "linter";
 
-.error {
-  background-color: @red;
-}
-
-.warning {
-  background-color: @orange;
-}
-
 .tree-view {
   font-size: 12px;
 }
@@ -43,7 +35,7 @@
   }
 
   .trailing-whitespace {
-    .error();
+    background-color: fadeout(@error-color, 50%);
   }
 
   &, .gutter {
@@ -156,11 +148,11 @@
   }
 
   .invalid {
-    .error();
+    background-color: @error-color;
     color: @brightwhite;
 
     &.deprecated {
-      .warning();
+      background-color: @warning-color;
     }
   }
 
