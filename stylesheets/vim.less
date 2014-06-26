@@ -1,0 +1,14 @@
+@import 'colors';
+
+.editor:not(.mini).is-focused.vim-mode {
+
+  &.command-mode {
+
+    .cursor.idle,
+    .cursor.idle.blink-off {
+      background: none;
+      background-color: fadeout(@red, 50%);
+      opacity: 1;
+    }
+  }
+}

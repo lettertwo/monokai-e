@@ -1,10 +1,7 @@
-// The ui-variables file is provided by base themes provided by Atom.
-//
 // See https://github.com/atom/atom-dark-ui/blob/master/stylesheets/ui-variables.less
 // for a full listing of what's available.
 @import "ui-variables";
 @import "colors";
-@import "linter";
 
 .tree-view {
   font-size: 12px;
@@ -57,17 +54,6 @@
     .cursor-line,
     .line-number.cursor-line-no-selection {
       background-color: fadeout(@brightblack, 70%);
-    }
-
-    /* vim mode */
-    &.vim-mode.command-mode {
-
-      .cursor.idle,
-      .cursor.idle.blink-off {
-        background: none;
-        background-color: fadeout(@blue, 50%);
-        opacity: 1;
-      }
     }
   }
 
@@ -164,151 +150,6 @@
 
     .preprocessor {
       color: @violet;
-    }
-  }
-
-  /* json */
-  .json {
-
-    .string {
-      color: @white;
-
-      > .punctuation {
-        color: fadeout(@white, 38%);
-      }
-    }
-
-    .punctuation.dictionary,
-    .punctuation.array {
-      font-weight: bold;
-    }
-
-    .value {
-
-      > .string {
-        color: @yellow;
-
-        > .punctuation {
-          color: @yellow;
-        }
-      }
-    }
-  }
-
-  /* markup */
-  .markup {
-
-    &.heading {
-      color: @orange;
-    }
-
-    &.italic {
-      font-style: italic;
-      color: @yellow;
-    }
-
-    &.bold {
-      font-weight: bold;
-      color: @yellow;
-    }
-
-    &.underline {
-      text-decoration: underline;
-      color: @magenta;
-    }
-
-    &.quote {
-      font-style: italic;
-      color: @cyan;
-    }
-  }
-
-  /* markdown */
-  .gfm {
-    color: @white;
-    -webkit-font-smoothing: inherit;
-
-    &.support {
-      color: @yellow;
-    }
-
-    &.entity {
-      color: @yellow;
-    }
-
-    &.raw {
-      color: @yellow;
-    }
-
-    &.code {
-      color: @white;
-    }
-
-    &.emoji {
-      color: @yellow;
-
-      .word {
-        color: @magenta;
-      }
-    }
-
-    &.link {
-      color: @magenta;
-
-      .string {
-        color: @yellow;
-      }
-    }
-
-    &.list {
-      color: @blue;
-    }
-
-    &.quote {
-      .markup.quote();
-    }
-  }
-
-  /* litcoffee */
-  .source.litcoffee .markdown {
-
-    &.meta {
-      color: fade(@white, 50%);
-    }
-
-    &.string,
-    &.bold,
-    &.italic,
-    &.raw.inline {
-      color: fade(@yellow, 50%);
-    }
-
-    &.punctuation {
-      color: fade(@orange, 50%);
-
-      &.list_item {
-        color: fade(@blue, 50%);
-      }
-
-    }
-
-    &.heading {
-      color: fade(@orange, 50%);
-    }
-
-    &.punctuation.blockquote,
-    &.quote {
-      color: fade(@cyan, 75%);
-      font-style: italic;
-    }
-
-    &.link {
-      color: fade(@green, 50%);
-
-      &.title,
-      &.description {
-        color: fade(@orange, 50%);
-      }
     }
   }
 }

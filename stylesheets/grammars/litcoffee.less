@@ -1,0 +1,43 @@
+@import 'colors';
+
+.source.litcoffee .markdown {
+
+  &.meta {
+    color: fade(@white, 50%);
+  }
+
+  &.string,
+  &.bold,
+  &.italic,
+  &.raw.inline {
+    color: fade(@yellow, 50%);
+  }
+
+  &.punctuation {
+    color: fade(@orange, 50%);
+
+    &.list_item {
+      color: fade(@blue, 50%);
+    }
+
+  }
+
+  &.heading {
+    color: fade(@orange, 50%);
+  }
+
+  &.punctuation.blockquote,
+  &.quote {
+    color: fade(@cyan, 75%);
+    font-style: italic;
+  }
+
+  &.link {
+    color: fade(@green, 50%);
+
+    &.title,
+    &.description {
+      color: fade(@orange, 50%);
+    }
+  }
+}

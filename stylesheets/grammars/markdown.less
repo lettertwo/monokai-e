@@ -1,0 +1,46 @@
+@import 'colors';
+
+.gfm {
+  color: @white;
+  -webkit-font-smoothing: inherit;
+
+  &.support {
+    color: @yellow;
+  }
+
+  &.entity {
+    color: @yellow;
+  }
+
+  &.raw {
+    color: @yellow;
+  }
+
+  &.code {
+    color: @white;
+  }
+
+  &.emoji {
+    color: @yellow;
+
+    .word {
+      color: @magenta;
+    }
+  }
+
+  &.link {
+    color: @magenta;
+
+    .string {
+      color: @yellow;
+    }
+  }
+
+  &.list {
+    color: @blue;
+  }
+
+  &.quote {
+    .markup.quote();
+  }
+}
