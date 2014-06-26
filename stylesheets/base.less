@@ -57,13 +57,14 @@
       border-color: @blue;
     }
 
-    .selection .region {
-      background-color: fadeout(@blue, 50%);
+    .selection .region,
+    .line-number.cursor-line {
+      background-color: @brightblack;
     }
 
     .cursor-line,
     .line-number.cursor-line-no-selection {
-      background-color: @brightblack;
+      background-color: fadeout(@brightblack, 70%);
     }
 
     /* vim mode */
