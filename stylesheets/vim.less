@@ -4,11 +4,23 @@
 
   &.command-mode {
 
-    .cursor.idle,
-    .cursor.idle.blink-off {
-      background: none;
+    .cursors,
+    .cursors.blink-off {
+
+      .cursor {
+        background: none;
+        opacity: 1;
+        background-color: fadeout(@red, 50%);
+        transition: background-color 0.3s ease-in-out;
+      }
+    }
+
+    .cursors .cursor {
       background-color: fadeout(@red, 50%);
-      opacity: 1;
+    }
+
+    .cursors.blink-off .cursor {
+      background-color: fadeout(@red, 60%);
     }
   }
 }
