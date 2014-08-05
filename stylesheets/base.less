@@ -40,6 +40,15 @@
     color: @white;
   }
 
+  .find-result .region {
+    border: 1px solid @magenta;
+  }
+
+  .current-result .region {
+    border: 1px solid @magenta;
+    background-color: fadeout(@magenta, 60%);
+  }
+
   &.is-focused {
 
     .cursor {
@@ -48,7 +57,7 @@
 
     .selection .region,
     .line-number.cursor-line {
-      background-color: @brightblack;
+      background-color: fadeout(@white, 70%);
     }
 
     .cursor-line,
