@@ -1,34 +1,37 @@
 @import "colors";
 
-.linter-warning:before {
-  color: @warning-color;
-}
+.gutter.linter-gutter-enabled .line-number {
 
-.linter-error:before {
-  color: @error-color;
-}
-
-.linter-statusbar {
-  font-size: 1.2em;
-}
-
-.linter-highlight {
-
-  .region {
-    border: none;
-    background: none;
-    opacity: 1;
-    padding: 0;
-    margin: 0;
-    box-sizing: content-box;
+  &.linter-warning:before {
+    color: @warning-color;
   }
 
-  &.warning .region {
+  &.linter-error:before {
+    color: @error-color;
+  }
+}
+
+.highlight {
+
+  &.linter-warning,
+  &.linter-error {
+
+    .region {
+      border: none;
+      background: none;
+      opacity: 1;
+      padding: 0;
+      margin: 0;
+      box-sizing: content-box;
+    }
+  }
+
+  &.linter-warning .region {
     background: none;
     border: none;
   }
 
-  &.error .region {
+  &.linter-error .region {
     background: fadeout(@error-color, 50%);
     border: none;
   }
