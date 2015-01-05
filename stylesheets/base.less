@@ -1,164 +1,174 @@
-// See https://github.com/atom/atom-dark-ui/blob/master/stylesheets/ui-variables.less
-// for a full listing of what's available.
-@import "ui-variables";
+@import "syntax-variables";
 @import "colors";
 
-.tree-view {
-  font-size: 12px;
+.editor-colors {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
 }
 
-.atom-color-highlight .region {
-  -webkit-font-smoothing: inherit;
-}
-
-.editor:not(.mini) {
+.editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
 
   .invisible-character {
-    color: @black;
+    color: @syntax-background-color;
   }
 
   .cursor-line .invisible-character {
-    color: lighten(@brightblack, 10%);
+    color: @syntax-invisible-character-color;
   }
 
   .indent-guide {
-    box-shadow: inset 1px 0 fadeout(@brightblack, 35%);
+    box-shadow: inset 1px 0 @syntax-indent-guide-color;
   }
 
   .wrap-guide,
   .bracket-matcher {
     border: none;
-    background-color: @brightblack;
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .gutter {
+
+    .line-number {
+      &.cursor-line {
+        color: @syntax-gutter-text-color-selected;
+
+        &:not(.cursor-line-no-selection) {
+          background-color: @syntax-selection-color;
+        }
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @syntax-result-marker-color;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    border-color: @syntax-cursor-color;
+  }
+
+  .cursor-line {
+    background-color: @syntax-gutter-background-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
+  .find-result .region,
+  .current-result .region {
+    border: 1px solid @syntax-result-marker-color;
+  }
+
+  .current-result .region {
+    background-color: @syntax-result-marker-color-selected;
   }
 
   .trailing-whitespace {
     background-color: fadeout(@error-color, 50%);
   }
+}
 
-  &, .gutter {
-    background-color: @black;
-    color: @white;
+.comment {
+  color: darken(@white, 38%);
+}
+
+.string {
+  color: @yellow;
+
+  .embedded {
+    color: @orange;
   }
+}
 
-  .find-result .region {
-    border: 1px solid @magenta;
-  }
+.variable {
 
-  .current-result .region {
-    border: 1px solid @magenta;
-    background-color: fadeout(@magenta, 60%);
-  }
-
-  &.is-focused {
-
-    .cursor {
-      border-color: @blue;
-    }
-
-    .selection .region,
-    .line-number.cursor-line {
-      background-color: fadeout(@white, 70%);
-    }
-
-    .cursor-line,
-    .line-number.cursor-line-no-selection {
-      background-color: fadeout(@brightblack, 70%);
-    }
-  }
-
-  .comment {
-    color: darken(@white, 38%);
-  }
-
-  .string {
+  &:not(.assignment):not(.parameter):not(.magic) {
     color: @yellow;
-
-    .embedded {
-      color: @orange;
-    }
+    font-weight: bold;
   }
 
-  .variable {
-
-    &:not(.assignment):not(.parameter):not(.magic) {
-      color: @yellow;
-      font-weight: bold;
-    }
-
-    &.magic,
-    &.parameter {
-      font-style: italic;
-      color: @orange
-    }
-
-    &.assignment > .punctuation.separator.key-value {
-      color: @magenta;
-    }
+  &.magic,
+  &.parameter {
+    font-style: italic;
+    color: @orange
   }
 
-  .constant {
-    color: @violet;
-
-    &.language {
-      font-weight: bold;
-    }
-
-    &.placeholder {
-      color: @orange;
-    }
-  }
-
-  .keyword {
+  &.assignment > .punctuation.separator.key-value {
     color: @magenta;
   }
+}
 
-  .storage {
-    color: @magenta;
+.constant {
+  color: @violet;
 
-    &.type {
-      font-style: italic;
-      color: @cyan;
-    }
+  &.language {
+    font-weight: bold;
   }
 
-  .entity {
-    color: @green;
-
-    &.other.inherited-class {
-      font-style: italic;
-    }
-
-    &.name.tag {
-      color: @magenta;
-    }
+  &.placeholder {
+    color: @orange;
   }
+}
 
-  .support {
+.keyword {
+  color: @magenta;
+}
+
+.storage {
+  color: @magenta;
+
+  &.type {
+    font-style: italic;
     color: @cyan;
+  }
+}
 
-    &.type,
-    &.class {
-      font-style: italic;
-    }
+.entity {
+  color: @green;
+
+  &.other.inherited-class {
+    font-style: italic;
   }
 
-  .invalid {
-    background-color: @error-color;
-    color: @brightwhite;
+  &.name.tag {
+    color: @magenta;
+  }
+}
 
-    &.deprecated {
-      background-color: @warning-color;
-    }
+.support {
+  color: @cyan;
+
+  &.type,
+  &.class {
+    font-style: italic;
+  }
+}
+
+.invalid {
+  background-color: @error-color;
+  color: @brightwhite;
+
+  &.deprecated {
+    background-color: @warning-color;
+  }
+}
+
+.meta {
+
+  .tag.sgml {
+    color: @orange;
   }
 
-  .meta {
-
-    .tag.sgml {
-      color: @orange;
-    }
-
-    .preprocessor {
-      color: @violet;
-    }
+  .preprocessor {
+    color: @violet;
   }
 }
