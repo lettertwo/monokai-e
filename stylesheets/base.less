@@ -29,7 +29,6 @@
   }
 
   .gutter {
-
     .line-number {
       &.cursor-line {
         color: @syntax-gutter-text-color-selected;
@@ -84,15 +83,23 @@
 .string {
   color: @yellow;
 
+  &.regexp {
+    color: @cyan;
+  }
+
   .embedded {
     color: @orange;
+  }
+
+  &.other.link {
+    color: @red;
   }
 }
 
 .variable {
+  color: @yellow;
 
   &:not(.assignment):not(.parameter):not(.magic) {
-    color: @yellow;
     font-weight: bold;
   }
 
@@ -120,15 +127,27 @@
 }
 
 .keyword {
-  color: @magenta;
+  color: @cyan;
+
+  &.operator {
+    color: @magenta;
+  }
+
+  &.other.special-method {
+    color: @blue;
+  }
+
+  &.other.unit {
+    color: @orange;
+  }
 }
 
 .storage {
   color: @magenta;
 
-  &.type {
-    font-style: italic;
-    color: @cyan;
+  &.type,
+  &.class {
+    font-weight: bold;
   }
 }
 
@@ -142,10 +161,30 @@
   &.name.tag {
     color: @magenta;
   }
+
+  &.name.type {
+    font-weight: bold;
+  }
+
+  &.name.section {
+    color: @blue;
+  }
+
+  &.other.attribute-name {
+    color: @orange;
+
+    &.id {
+      color: @cyan;
+    }
+  }
 }
 
 .support {
   color: @cyan;
+
+  &.function {
+    font-weight: bold;
+  }
 
   &.type,
   &.class {
@@ -163,6 +202,26 @@
 }
 
 .meta {
+  &.class {
+    color: @orange;
+  }
+
+  &.link {
+    color: @magenta;
+  }
+
+  &.require {
+    color: @blue;
+  }
+
+  &.selector {
+    color: @violet;
+  }
+
+  &.separator {
+    background-color: @brightblack;
+    color: @syntax-text-color;
+  }
 
   .tag.sgml {
     color: @orange;
@@ -171,4 +230,42 @@
   .preprocessor {
     color: @violet;
   }
+}
+
+.punctuation {
+  &.definition {
+    &.comment {
+      color: @brightblack;
+    }
+
+    &.string,
+    &.variable,
+    &.parameters,
+    &.array {
+      color: @syntax-text-color;
+    }
+
+    &.heading,
+    &.identity {
+      color: @blue;
+    }
+
+    &.bold {
+      color: @orange;
+      font-style: bold;
+    }
+
+    &.italic {
+      color: @violet;
+      font-style: italic;
+    }
+  }
+
+  &.section.embedded {
+    color: @orange;
+  }
+}
+
+.none {
+  color: @syntax-text-color;
 }

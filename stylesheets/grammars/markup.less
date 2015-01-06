@@ -1,4 +1,4 @@
-@import 'colors';
+@import '../colors';
 
 .markup {
 
@@ -24,5 +24,33 @@
   &.quote {
     font-style: italic;
     color: @cyan;
+  }
+
+  &.changed {
+    color: @violet;
+  }
+
+  &.deleted {
+    color: @red;
+  }
+
+  &.inserted {
+    color: @green;
+  }
+
+  &.heading .punctuation.definition.heading {
+    color: @blue;
+  }
+
+  &.list {
+    color: @red;
+  }
+
+  &.quote {
+    color: @orange;
+  }
+
+  &.raw.inline {
+    color: @green;
   }
 }
