@@ -1,26 +1,17 @@
 @import 'colors';
+@import 'syntax-variables';
 
 .editor.is-focused.vim-mode {
 
   &.command-mode {
 
-    .cursors,
-    .cursors.blink-off {
-
-      .cursor {
-        background: none;
-        opacity: 1;
-        background-color: fadeout(@red, 50%);
-        transition: background-color 0.3s ease-in-out;
-      }
-    }
-
     .cursors .cursor {
-      background-color: fadeout(@red, 50%);
+      transition: background-color 0.1s ease-in-out;
+      background: @syntax-cursor-color !important;
     }
 
     .cursors.blink-off .cursor {
-      background-color: fadeout(@red, 60%);
+      background: fadeout(@syntax-cursor-color, 60%) !important;
     }
   }
 }
