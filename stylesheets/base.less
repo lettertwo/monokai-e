@@ -1,12 +1,7 @@
 @import "syntax-variables";
 @import "colors";
 
-.editor-colors {
-  background-color: @syntax-background-color;
-  color: @syntax-text-color;
-}
-
-.editor {
+:host {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
 
@@ -22,21 +17,18 @@
     box-shadow: inset 1px 0 @syntax-indent-guide-color;
   }
 
-  .wrap-guide,
-  .bracket-matcher {
-    border: none;
+  .wrap-guide {
     background-color: @syntax-wrap-guide-color;
   }
 
-  .gutter {
-    .line-number {
-      &.cursor-line {
-        color: @syntax-gutter-text-color-selected;
+  .gutter .line-number.cursor-line {
+    color: @syntax-gutter-text-color-selected;
+    background-color: @syntax-gutter-background-color-selected;
+    border-bottom: 1px solid @syntax-selection-color;
 
-        &:not(.cursor-line-no-selection) {
-          background-color: @syntax-selection-color;
-        }
-      }
+    &:not(.cursor-line-no-selection) {
+      background-color: @syntax-selection-color;
+      border: none;
     }
   }
 
@@ -62,55 +54,68 @@
     background-color: @syntax-selection-color;
   }
 
-  .find-result .region,
-  .current-result .region {
-    border: 1px solid @syntax-result-marker-color;
-  }
-
-  .current-result .region {
-    background-color: @syntax-result-marker-color-selected;
-  }
-
   .trailing-whitespace {
     background-color: fadeout(@error-color, 50%);
+  }
+
+  .bracket-matcher.region {
+    border: none;
+    background-color: @syntax-wrap-guide-color;
+    border-radius: .1rem;
+    box-shadow: 0 0 0 .2rem @syntax-wrap-guide-color;
+  }
+
+  .highlights .highlight {
+
+    &.find-result .region,
+    &.current-result .region {
+      border: 1px solid @syntax-result-marker-color;
+    }
+
+    &.current-result .region {
+      background-color: @syntax-result-marker-color-selected;
+    }
   }
 }
 
 .comment {
-  color: darken(@white, 38%);
+  color: @gray;
 }
 
 .string {
   color: @yellow;
 
   &.regexp {
-    color: @cyan;
+    color: mix(@yellow, @green);
   }
 
   .embedded {
-    color: @orange;
+    color: mix(@yellow, @orange);
   }
 
   &.other.link {
     color: @red;
   }
+
+  &.quoted.double .begin,
+  &.quoted.double .end,
+  &.quoted.single .begin,
+  &.quoted.single .end {
+    color: mix(@yellow, @dark-gray);
+  }
 }
 
 .variable {
-  color: @yellow;
-
-  &:not(.assignment):not(.parameter):not(.magic) {
-    font-weight: bold;
-  }
+  color: @blue;
 
   &.assignment {
-    color: @bright-white;
+    color: mix(@blue, @light-gray);
   }
 
   &.magic,
   &.parameter {
     font-style: italic;
-    color: @orange
+    color: mix(@magenta, @orange);
   }
 
   &.assignment > .punctuation.separator.key-value {
@@ -127,6 +132,21 @@
 
   &.placeholder {
     color: @orange;
+  }
+
+  &.boolean {
+
+      &.true {
+        color: mix(@violet, @blue);
+      }
+
+      &.false {
+        color: mix(@violet, @red);
+      }
+  }
+
+  &.null {
+    color: mix(@blue, @dark-gray);
   }
 }
 
@@ -147,7 +167,7 @@
 }
 
 .storage {
-  color: @magenta;
+  color: @orange;
 
   &.type,
   &.class {
@@ -164,10 +184,14 @@
 
   &.name.tag {
     color: @magenta;
+
+    &.inline {
+      color: mix(@magenta, @orange);
+    }
   }
 
   &.name.type {
-    font-weight: bold;
+    text-decoration: underline;
   }
 
   &.name.section {
@@ -194,7 +218,7 @@
 
 .invalid {
   background-color: @error-color;
-  color: @bright-white;
+  color: @white;
 
   &.deprecated {
     background-color: @warning-color;
@@ -219,7 +243,7 @@
   }
 
   &.separator {
-    background-color: @bright-black;
+    background-color: @dark-gray;
     color: @syntax-text-color;
   }
 
@@ -235,7 +259,7 @@
 .punctuation {
   &.definition {
     &.comment {
-      color: @bright-black;
+      color: lighten(@gray, 10%);
     }
 
     &.string,
@@ -268,4 +292,8 @@
 
 .none {
   color: @syntax-text-color;
+}
+
+:host(.mini) .scroll-view {
+  padding-left: 1px;
 }

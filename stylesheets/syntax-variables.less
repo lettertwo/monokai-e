@@ -4,16 +4,16 @@
 // include a syntax-variables.less file.
 
 // General colors
-@syntax-text-color: @white;
+@syntax-text-color: @light-gray;
 @syntax-cursor-color: @blue;
-@syntax-selection-color: fadeout(@white, 70%);
+@syntax-selection-color: fadeout(@light-gray, 70%);
 @syntax-selection-flash-color: @red;
 @syntax-background-color: @black;
 
 // Guide colors
-@syntax-wrap-guide-color: @bright-black;
-@syntax-indent-guide-color: fadeout(@bright-black, 35%);
-@syntax-invisible-character-color: lighten(@bright-black, 10%);
+@syntax-wrap-guide-color: @dark-gray;
+@syntax-indent-guide-color: fadeout(@dark-gray, 35%);
+@syntax-invisible-character-color: lighten(@dark-gray, 10%);
 
 // For find and replace markers
 @syntax-result-marker-color: @magenta;
@@ -21,8 +21,8 @@
 
 // Gutter colors
 @syntax-gutter-text-color: @syntax-text-color;
-@syntax-gutter-text-color-selected: @bright-white;
-@syntax-gutter-background-color: fadeout(@bright-black, 70%);
+@syntax-gutter-text-color-selected: @white;
+@syntax-gutter-background-color: fadeout(@dark-gray, 70%);
 @syntax-gutter-background-color-selected: @syntax-gutter-background-color;
 
 // For git diff info. i.e. in the gutter
