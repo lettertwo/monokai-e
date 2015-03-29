@@ -106,7 +106,7 @@
 }
 
 .variable {
-  color: @blue;
+  color: @green;
 
   &.assignment {
     color: mix(@blue, @light-gray);
@@ -151,11 +151,7 @@
 }
 
 .keyword {
-  color: @cyan;
-
-  &.operator {
-    color: @magenta;
-  }
+  color: @magenta;
 
   &.other.special-method {
     color: @blue;
@@ -176,7 +172,7 @@
 }
 
 .entity {
-  color: @green;
+  color: mix(@magenta, @orange);
 
   &.other.inherited-class {
     font-style: italic;
@@ -184,18 +180,18 @@
 
   &.name.tag {
     color: @magenta;
+  }
 
-    &.inline {
-      color: mix(@magenta, @orange);
-    }
+  &.name.function {
+    color: @cyan;
   }
 
   &.name.type {
-    text-decoration: underline;
+    color: @cyan;
   }
 
-  &.name.section {
-    color: @blue;
+  &.name.property {
+    color: mix(@blue, @light-gray);
   }
 
   &.other.attribute-name.id {
@@ -234,10 +230,6 @@
     color: @magenta;
   }
 
-  &.require {
-    color: @blue;
-  }
-
   &.selector {
     color: @violet;
   }
@@ -245,6 +237,10 @@
   &.separator {
     background-color: @dark-gray;
     color: @syntax-text-color;
+  }
+
+  &.brace.round {
+    color: mix(@blue, @light-gray);
   }
 
   .tag.sgml {
