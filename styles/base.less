@@ -83,15 +83,13 @@
 }
 
 .string {
-
-  &:not(.unquoted) {
-    color: @yellow;
-  }
+  color: @yellow;
 
   &.regexp {
     color: mix(@yellow, @green);
   }
 
+  &.quasi,
   .embedded {
     color: mix(@yellow, @orange);
   }
@@ -109,6 +107,7 @@
 }
 
 .variable {
+  color: @syntax-text-color;
 
   &.static {
     color: @violet;
@@ -209,13 +208,16 @@
     }
   }
 
-
   &.name.type {
     color: @cyan;
   }
 
   &.other.attribute-name.id {
     color: @cyan;
+  }
+
+  &.quasi {
+    color: @orange;
   }
 }
 
