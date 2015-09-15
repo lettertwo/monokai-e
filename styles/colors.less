@@ -4,16 +4,34 @@
 @light-gray: #CFCFC2;
 @white: #EEEEEE;
 
+// primary
 @cyan: #66D9EF;
 @magenta: #F92672;
 @yellow: #E6DB74;
 
-@red: #E92E4D;
+// secondary
+@red: #E21F17;
 @green: #A6E22E;
-@blue: #7DA5DC;
+@blue: #519FD8;
 
-@violet: #AE81FF;
-@orange: #FD971F;
+// tertiary
+@violet: mix(@magenta, @blue, 35%);
+@orange: saturate(mix(@yellow, @red, 70%), 30%);
+@chartreuse: saturate(mix(@yellow, @green, 50%), 10%);
+
+// quaternary
+@orange-yellow: mix(@orange, @yellow, 50%);
+@dark-yellow: mix(@dark-gray, @yellow, 50%);
+
+@blue-light-gray: mix(@blue, @light-gray, 50%);
+@blue-dark-gray: mix(@blue, @dark-gray, 50%);
+@blue-violet: mix(@blue, @violet, 50%);
+
+@magenta-orange: mix(@magenta, @orange, 50%);
+
+@red-violet: mix(@red, @violet, 50%);
+
+@cyan-green: mix(@cyan, @green, 50%);
 
 @error-color: @red;
 @warning-color: @orange;

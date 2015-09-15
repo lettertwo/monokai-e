@@ -1,28 +1,14 @@
 @import '../colors';
 
-.json {
-
-  .string {
-    color: @light-gray;
-
-    > .punctuation {
-      color: fadeout(@light-gray, 38%);
-    }
-  }
-
-  .punctuation.dictionary,
-  .punctuation.array {
-    font-weight: bold;
-  }
-
-  .value {
-
-    > .string {
-      color: @yellow;
-
-      > .punctuation {
-        color: @yellow;
-      }
-    }
-  }
+.json .string {
+  color: @light-gray;
+}
+.json .string  > .punctuation {
+  color: @gray;
+}
+.json .value > .string {
+  color: @yellow;
+}
+.json .value > .punctuation {
+  color: @dark-yellow;
 }

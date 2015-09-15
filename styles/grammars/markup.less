@@ -1,56 +1,53 @@
 @import '../colors';
 
-.markup {
+.markup.heading {
+  color: @orange;
+}
 
-  &.heading {
-    color: @orange;
-  }
+.markup.italic {
+  font-style: italic;
+  color: @yellow;
+}
 
-  &.italic {
-    font-style: italic;
-    color: @yellow;
-  }
+.markup.bold {
+  font-weight: bold;
+  color: @yellow;
+}
 
-  &.bold {
-    font-weight: bold;
-    color: @yellow;
-  }
+.markup.underline {
+  text-decoration: underline;
+  color: @green;
+}
 
-  &.underline {
-    text-decoration: underline;
-    color: @green;
-  }
+.markup.quote {
+  font-style: italic;
+  color: @cyan;
+}
 
-  &.quote {
-    font-style: italic;
-    color: @cyan;
-  }
+.markup.changed {
+  color: @violet;
+}
 
-  &.changed {
-    color: @violet;
-  }
+.markup.deleted {
+  color: @red;
+}
 
-  &.deleted {
-    color: @red;
-  }
+.markup.inserted {
+  color: @green;
+}
 
-  &.inserted {
-    color: @green;
-  }
+.markup.heading .punctuation.definition.heading {
+  color: @blue;
+}
 
-  &.heading .punctuation.definition.heading {
-    color: @blue;
-  }
+.markup.list {
+  color: @red;
+}
 
-  &.list {
-    color: @red;
-  }
+.markup.quote {
+  color: @orange;
+}
 
-  &.quote {
-    color: @orange;
-  }
-
-  &.raw.inline {
-    color: @green;
-  }
+.markup.raw.inline {
+  color: @green;
 }

@@ -1,50 +1,45 @@
 @import '../colors';
 
-.gfm {
+.gfm.heading {
+  color: @magenta;
+}
+
+.gfm.support {
+  color: @yellow;
+}
+
+.gfm.entity {
+  color: @yellow;
+}
+
+.gfm.raw {
+  color: @yellow;
+}
+
+.gfm.code {
   color: @light-gray;
-  -webkit-font-smoothing: inherit;
+}
 
-  &.heading {
-    color: @magenta;
-  }
+.gfm.emoji {
+  color: @yellow;
+}
 
-  &.support {
-    color: @yellow;
-  }
+.gfm.emoji .word {
+  color: @magenta;
+}
 
-  &.entity {
-    color: @yellow;
-  }
+.gfm.link {
+  color: @green;
+}
 
-  &.raw {
-    color: @yellow;
-  }
+.gfm.link .string {
+  color: @yellow;
+}
 
-  &.code {
-    color: @light-gray;
-  }
+.gfm.list {
+  color: @blue;
+}
 
-  &.emoji {
-    color: @yellow;
-
-    .word {
-      color: @magenta;
-    }
-  }
-
-  &.link {
-    color: @green;
-
-    .string {
-      color: @yellow;
-    }
-  }
-
-  &.list {
-    color: @blue;
-  }
-
-  &.quote {
-    .markup.quote();
-  }
+.gfm.quote {
+  color: @orange;
 }

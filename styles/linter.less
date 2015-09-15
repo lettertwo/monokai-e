@@ -1,38 +1,29 @@
 @import "colors";
 
-.gutter.linter-gutter-enabled .line-number {
-
-  &.linter-warning:before {
-    color: @warning-color;
-  }
-
-  &.linter-error:before {
-    color: @error-color;
-  }
+.gutter.linter-gutter-enabled .line-number.linter-warning:before {
+  color: @warning-color;
 }
 
-.highlight {
+.gutter.linter-gutter-enabled .line-number.linter-error:before {
+  color: @error-color;
+}
 
-  &.linter-warning,
-  &.linter-error {
+.highlight.linter-warning .region,
+.highlight.linter-error .region {
+  border: none;
+  background: none;
+  opacity: 1;
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
 
-    .region {
-      border: none;
-      background: none;
-      opacity: 1;
-      padding: 0;
-      margin: 0;
-      box-sizing: content-box;
-    }
-  }
+.highlight.linter-warning .region {
+  background: none;
+  border: none;
+}
 
-  &.linter-warning .region {
-    background: none;
-    border: none;
-  }
-
-  &.linter-error .region {
-    background: fadeout(@error-color, 50%);
-    border: none;
-  }
+.highlight.linter-error .region {
+  background: fadeout(@error-color, 50%);
+  border: none;
 }
