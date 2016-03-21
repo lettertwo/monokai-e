@@ -1,0 +1,53 @@
+@import "syntax-variables";
+// add or import these into your Atom styles.less
+
+atom-text-editor.vim-mode,
+atom-text-editor.vim-mode-plus,
+atom-text-editor.is-focused.vim-mode,
+atom-text-editor.is-focused.vim-mode-plus {
+
+  &.normal-mode,
+  &.normal-mode::shadow {
+
+    .cursor-line {
+      background: @syntax-background-color-normal;
+    }
+
+    .cursor {
+      background-color: @syntax-color-normal;
+    }
+  }
+
+  &.insert-mode,
+  &.insert-mode::shadow {
+
+    .cursor-line {
+      background: @syntax-background-color-insert;
+    }
+
+    .cursor {
+      background-color: none;
+      border-color: @syntax-color-insert;
+    }
+  }
+
+  &.visual-mode,
+  &.visual-mode::shadow {
+    .cursor {
+      background-color: @syntax-color-visual;
+    }
+  }
+
+  &.operator-pending-mode,
+  &.operator-pending-mode::shadow,
+  &.with-count,
+  &.with-count::shadow {
+    .cursor-line {
+      background: @syntax-background-color-pending;
+    }
+
+    .cursor {
+      background-color: @syntax-color-pending;
+    }
+  }
+}

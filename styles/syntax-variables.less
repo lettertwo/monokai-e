@@ -5,8 +5,8 @@
 
 // General colors
 @syntax-text-color: @light-gray;
-@syntax-cursor-color: @blue;
-@syntax-selection-color: fadeout(@light-gray, 70%);
+@syntax-cursor-color: @syntax-color-normal;
+@syntax-selection-color: @syntax-background-color-visual;
 @syntax-selection-flash-color: @red;
 @syntax-background-color: @black;
 
@@ -30,3 +30,14 @@
 @syntax-color-added: @green;
 @syntax-color-modified: @orange;
 @syntax-color-removed: @red;
+
+// For editor modes (via vim-mode, etc)
+@syntax-color-normal: @blue;
+@syntax-color-insert: @green;
+@syntax-color-visual: @yellow;
+@syntax-color-pending: @red;
+
+@syntax-background-color-normal: fadeout(@syntax-color-normal, 92);
+@syntax-background-color-insert: fadeout(@syntax-color-insert, 92);
+@syntax-background-color-visual: fadeout(@syntax-color-visual, 85);
+@syntax-background-color-pending: fadeout(@syntax-color-pending, 85);
