@@ -7,7 +7,7 @@ atom-text-editor.is-focused.vim-mode,
 atom-text-editor.is-focused.vim-mode-plus {
 
   &.normal-mode,
-  &.normal-mode::shadow {
+  &.normal-mode {
 
     .cursor-line {
       background: @syntax-background-color-normal;
@@ -19,7 +19,7 @@ atom-text-editor.is-focused.vim-mode-plus {
   }
 
   &.insert-mode,
-  &.insert-mode::shadow {
+  &.insert-mode {
 
     .cursor-line {
       background: @syntax-background-color-insert;
@@ -32,16 +32,16 @@ atom-text-editor.is-focused.vim-mode-plus {
   }
 
   &.visual-mode,
-  &.visual-mode::shadow {
+  &.visual-mode {
     .cursor {
       background-color: @syntax-color-visual;
     }
   }
 
   &.operator-pending-mode,
-  &.operator-pending-mode::shadow,
+  &.operator-pending-mode,
   &.with-count,
-  &.with-count::shadow {
+  &.with-count {
     .cursor-line {
       background: @syntax-background-color-pending;
     }
