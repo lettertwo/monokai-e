@@ -55,7 +55,7 @@ atom-text-editor .selection .region {
 
 // Whitespace
 atom-text-editor .trailing-whitespace {
-  background-color: fadeout(@error-color, 50%);
+  background-color: fadeout(@bad, 50%);
 }
 
 // Highlights
@@ -79,10 +79,10 @@ atom-text-editor .highlights .highlight.current-result .region {
 
 // Comments
 .syntax--comment {
-  color: @gray;
+  color: @ignore;
 }
 .syntax--punctuation.syntax--definition.syntax--comment {
-  color: @gray-dark;
+  color: @hidden;
 }
 
 // Punctuation
@@ -238,11 +238,11 @@ atom-text-editor .highlights .highlight.current-result .region {
 
 // Invalid
 .syntax--invalid {
-  background-color: @error-color;
+  background-color: @bad;
   color: @white;
 }
 .syntax--invalid.syntax--deprecated {
-  background-color: @warning-color;
+  background-color: @warn;
   color: @white;
 }
 

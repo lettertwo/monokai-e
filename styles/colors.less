@@ -1,4 +1,5 @@
 @black:      #1F1F1F;
+@black-dark: darken(@black, 5%);
 @white:      #EEEEEE;
 @gray:       mix(@black, @white);
 @gray-dark:  darken(@gray, 30%);
@@ -42,5 +43,9 @@
 @blue-gray-light:  mix(@blue, @gray-light);
 @blue-gray-dark:   mix(@blue, @gray-dark);
 
-@error-color:   @red;
-@warning-color: @orange;
+// status
+@good: @green;
+@bad: @red;
+@warn: @orange;
+@hidden: @gray-dark;
+@ignore: @gray;

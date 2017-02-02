@@ -1,11 +1,11 @@
 @import "colors";
 
 .gutter.linter-gutter-enabled .line-number.linter-warning:before {
-  color: @warning-color;
+  color: @warn;
 }
 
 .gutter.linter-gutter-enabled .line-number.linter-error:before {
-  color: @error-color;
+  color: @bad;
 }
 
 .highlight.linter-warning .region,
@@ -24,6 +24,6 @@
 }
 
 .highlight.linter-error .region {
-  background: fadeout(@error-color, 50%);
+  background: fadeout(@bad, 50%);
   border: none;
 }
