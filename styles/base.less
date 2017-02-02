@@ -2,74 +2,74 @@
 @import "colors";
 
 // Foreground and background
-:host {
+atom-text-editor {
   color: @syntax-text-color;
   background-color: @syntax-background-color;
 }
 
 // Invisibles
-:host .invisible {
+atom-text-editor .invisible {
   color: @syntax-text-color;
 }
-:host .invisible-character {
+atom-text-editor .invisible-character {
   color: @syntax-background-color;
 }
-:host .cursor-line .invisible-character {
+atom-text-editor .cursor-line .invisible-character {
   color: @syntax-invisible-character-color;
 }
 
 // Guides
-:host .indent-guide {
+atom-text-editor .indent-guide {
   box-shadow: inset 1px 0 @syntax-indent-guide-color;
 }
-:host .wrap-guide {
+atom-text-editor .wrap-guide {
   background-color: @syntax-wrap-guide-color;
 }
 
 // Gutters
-:host .gutter .line-number.cursor-line {
+atom-text-editor .gutter .line-number.cursor-line {
   background-color: @syntax-gutter-background-color;
   color: @syntax-gutter-text-color-selected;
 }
-:host .gutter .line-number.cursor-line:not(.cursor-line-no-selection) {
+atom-text-editor .gutter .line-number.cursor-line:not(.cursor-line-no-selection) {
   background-color: @syntax-gutter-background-color-selected;
 }
-:host .gutter .line-number.folded,
-:host .gutter .line-number:after,
-:host .fold-marker:after {
+atom-text-editor .gutter .line-number.folded,
+atom-text-editor .gutter .line-number:after,
+atom-text-editor .fold-marker:after {
   color: @syntax-result-marker-color;
 }
 
 // Cursor
-:host .cursor {
+atom-text-editor .cursor {
   border-color: @syntax-cursor-color;
 }
-:host .cursor-line {
+atom-text-editor .cursor-line {
   background-color: @syntax-gutter-background-color;
 }
 
 // Selections
-:host .selection .region {
+atom-text-editor .selection .region {
   background-color: @syntax-selection-color;
 }
 
 // Whitespace
-:host .trailing-whitespace {
+atom-text-editor .trailing-whitespace {
   background-color: fadeout(@error-color, 50%);
 }
 
 // Highlights
-:host .bracket-matcher.region {
+atom-text-editor .bracket-matcher.region {
   border: none;
   background-color: @syntax-wrap-guide-color;
   border-radius: .1rem;
   box-shadow: 0 0 0 .2rem @syntax-wrap-guide-color;
 }
-:host .highlights .highlight.find-result .region,
-:host .highlights .highlight.current-result .region {
+atom-text-editor .highlights .highlight.find-result .region,
+atom-text-editor .highlights .highlight.current-result .region {
   border: 1px solid @syntax-result-marker-color;
 }
-:host .highlights .highlight.current-result .region {
+atom-text-editor .highlights .highlight.current-result .region {
   background-color: @syntax-result-marker-color-selected;
 }
 
