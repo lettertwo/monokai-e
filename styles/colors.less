@@ -49,3 +49,14 @@
 @warn: @orange;
 @hidden: @gray-dark;
 @ignore: @gray;
+
+// For editor modes (vim-mode-plus, etc)
+@mode-normal: @blue;
+@mode-insert: @magenta;
+@mode-visual: @violet;
+@mode-pending: @orange;
+
+@mode-background-normal: fadeout(@mode-normal, 90);
+@mode-background-insert: fadeout(@mode-insert, 90);
+@mode-background-visual: fadeout(@mode-visual, 70);
+@mode-background-pending: fadeout(@mode-pending, 90);

@@ -1,5 +1,4 @@
-@import "syntax-variables";
-// add or import these into your Atom styles.less
+@import "colors";
 
 atom-text-editor.vim-mode,
 atom-text-editor.vim-mode-plus,
@@ -10,11 +9,11 @@ atom-text-editor.is-focused.vim-mode-plus {
   &.normal-mode {
 
     .cursor-line {
-      background: @syntax-background-color-normal;
+      background: @mode-background-normal;
     }
 
     .cursor {
-      background-color: @syntax-color-normal;
+      background-color: @mode-normal;
     }
   }
 
@@ -22,19 +21,19 @@ atom-text-editor.is-focused.vim-mode-plus {
   &.insert-mode {
 
     .cursor-line {
-      background: @syntax-background-color-insert;
+      background: @mode-background-insert;
     }
 
     .cursor {
       background-color: none;
-      border-color: @syntax-color-insert;
+      border-color: @mode-insert;
     }
   }
 
   &.visual-mode,
   &.visual-mode {
     .cursor {
-      background-color: @syntax-color-visual;
+      background-color: @mode-visual;
     }
   }
 
@@ -43,11 +42,11 @@ atom-text-editor.is-focused.vim-mode-plus {
   &.with-count,
   &.with-count {
     .cursor-line {
-      background: @syntax-background-color-pending;
+      background: @mode-background-pending;
     }
 
     .cursor {
-      background-color: @syntax-color-pending;
+      background-color: @mode-pending;
     }
   }
 }
