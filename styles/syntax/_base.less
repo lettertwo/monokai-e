@@ -15,27 +15,27 @@
   color: @blue;
 }
 .syntax--punctuation.syntax--definition.syntax--bold {
-  color: @orange;
+  color: @syntax-color-value;
   font-style: bold;
 }
 .syntax--punctuation.syntax--definition.syntax--italic {
-  color: @violet;
+  color: @syntax-color-constant;
   font-style: italic;
 }
 .syntax--punctuation.syntax--quasi,
 .syntax--punctuation.syntax--section.syntax--embedded {
-  color: @orange;
+  color: @syntax-color-value;
 }
 
 // Operators
 .syntax--operator {
-  color: @magenta;
+  color: @syntax-color-keyword;
 }
 .syntax--operator.syntax--assignment {
-  color: @magenta;
+  color: @syntax-color-keyword;
 }
 .syntax--operator.syntax--accessor {
-  color: @syntax-text-color;
+  color: @syntax-color-property;
 }
 
 // Strings
@@ -84,7 +84,7 @@
   font-weight: bold;
 }
 .syntax--constant.syntax--placeholder {
-  color: @orange;
+  color: @syntax-color-value;
 }
 .syntax--constant.syntax--boolean.syntax--true {
   color: @indigo;
@@ -104,12 +104,12 @@
   color: @blue;
 }
 .syntax--keyword.syntax--other.syntax--unit {
-  color: @orange;
+  color: @syntax-color-value;
 }
 
 // Storage
 .syntax--storage {
-  color: @orange;
+  color: @syntax-color-value;
 }
 .syntax--storage.syntax--variable {
   font-style: italic;
@@ -142,7 +142,7 @@
  color: @cyan;
 }
 .syntax--entity.syntax--quasi {
-  color: @orange;
+  color: @syntax-color-value;
 }
 
 // Support
@@ -182,7 +182,7 @@
   color: @blue-gray-light;
 }
 .syntax--meta .syntax--tag.syntax--sgml {
-  color: @orange;
+  color: @syntax-color-value;
 }
 .syntax--meta .syntax--preprocessor {
   color: @violet;
