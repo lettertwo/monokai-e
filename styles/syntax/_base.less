@@ -1,9 +1,9 @@
 // Comments
 .syntax--comment {
-  color: @ignore;
+  color: @syntax-color-comment;
 }
 .syntax--punctuation.syntax--definition.syntax--comment {
-  color: @hidden;
+  color: darken(@syntax-color-comment, 18%);
 }
 
 // Punctuation
@@ -12,7 +12,7 @@
 }
 .syntax--punctuation.syntax--definition.syntax-heading,
 .syntax--punctuation.syntax--definition.syntax-identity {
-  color: @blue;
+  color: @syntax-color-definition;
 }
 .syntax--punctuation.syntax--definition.syntax--bold {
   color: @syntax-color-value;
@@ -40,42 +40,43 @@
 
 // Strings
 .syntax--string {
-  color: @yellow;
+  color: @syntax-color-attribute;
 }
 .syntax--string.syntax--regexp {
-  color: @chartreuse;
+  color: @syntax-color-class;
 }
 .syntax--string.syntax--quasi,
 .syntax--string .syntax--embedded {
-  color: @amber;
+  color: @syntax-color-embedded;
 }
 .syntax--string.syntax--quoted .syntax--begin,
 .syntax--string.syntax--quoted .syntax--end {
-  color: @yellow-dark-gray;
+  color: darken(@syntax-color-string, 37%);
 }
 
 // Variables
 .syntax--variable {
-  color: @syntax-text-color;
+  color: @syntax-color-variable;
 }
 .syntax--variable.syntax--property {
-  color: @blue-gray-light;
+  color: @syntax-color-property;
 }
 .syntax--variable.syntax--static {
-  color: @violet;
+  color: @syntax-color-constant;
 }
 .syntax--variable.syntax--magic,
-.syntax--variable.syntax--parameter {
+.syntax--variable.syntax--parameter,
+.syntax--parameters .syntax--variable {
   font-style: italic;
-  color: @sunset;
+  color: @syntax-color-parameter;
 }
 .syntax--variable.syntax--class {
-  color: @white;
+  color: @syntax-text-color;
 }
 
 // Constants
 .syntax--constant {
-  color: @violet;
+  color: @syntax-color-constant;
 }
 .syntax--constant.syntax--key {
   font-style: italic;
@@ -87,21 +88,21 @@
   color: @syntax-color-value;
 }
 .syntax--constant.syntax--boolean.syntax--true {
-  color: @indigo;
+  color: @syntax-color-true;
 }
 .syntax--constant.syntax--boolean.syntax--false {
-  color: @wine;
+  color: @syntax-color-false;
 }
 .syntax--constant.syntax--null {
-  color: @blue-gray-dark;
+  color: @syntax-color-null;
 }
 
 // Keywords
 .syntax--keyword {
-  color: @magenta;
+  color: @syntax-color-keyword;
 }
 .syntax--keyword.syntax--other.syntax--special-method {
-  color: @blue;
+  color: @syntax-color-definition;
 }
 .syntax--keyword.syntax--other.syntax--unit {
   color: @syntax-color-value;
@@ -124,22 +125,22 @@
   font-style: italic;
 }
 .syntax--entity.syntax--other.syntax--attribute-name {
-  color: @yellow;
+  color: @syntax-color-attribute;
 }
 .syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
-  color: @cyan;
+  color: @syntax-color-function;
 }
 .syntax--entity.syntax--name.syntax--tag {
-  color: @magenta;
+  color: @syntax-color-keyword;
 }
 .syntax--entity.syntax--name.syntax--class {
-  color: @magenta;
+  color: @syntax-color-keyword;
 }
 .syntax--entity.syntax--name.syntax--function {
-  color: @cyan;
+  color: @syntax-color-function;
 }
 .syntax--entity.syntax--name.syntax--type {
- color: @cyan;
+ color: @syntax-color-function;
 }
 .syntax--entity.syntax--quasi {
   color: @syntax-color-value;
@@ -147,45 +148,45 @@
 
 // Support
 .syntax--support {
-  color: @magenta;
+  color: @syntax-color-keyword;
 }
 .syntax--support.syntax--function {
  font-weight: bold;
 }
 .syntax--support.syntax--type {
   font-style: italic;
-  color: @chartreuse;
+  color: @syntax-color-class;
 }
 
 // Invalid
 .syntax--invalid {
   background-color: @bad;
-  color: @white;
+  color: @syntax-text-color;
 }
 .syntax--invalid.syntax--deprecated {
   background-color: @warn;
-  color: @white;
+  color: @syntax-text-color;
 }
 
 // Meta
 .syntax--meta.syntax--link {
-  color: @green;
+  color: @syntax-color-link;
 }
 .syntax--meta.syntax--selector {
-  color: @violet;
+  color: @syntax-color-constant;
 }
 .syntax--meta.syntax--separator {
-  background-color: @gray-dark;
+  background-color: @syntax-background-color;
   color: @syntax-text-color;
 }
-.syntax--meta.syntax--brace.syntax--round {
-  color: @blue-gray-light;
+.syntax--meta.syntax--brace {
+  color: @syntax-color-brace;
 }
 .syntax--meta .syntax--tag.syntax--sgml {
   color: @syntax-color-value;
 }
 .syntax--meta .syntax--preprocessor {
-  color: @violet;
+  color: @syntax-color-constant;
 }
 
 // None ?
