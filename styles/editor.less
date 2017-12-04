@@ -1,0 +1,80 @@
+// Editor styles
+
+atom-text-editor {
+  color: @syntax-text-color;
+  background-color: @syntax-background-color;
+
+  // Invisibles
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .invisible-character {
+    color: @syntax-background-color;
+  }
+
+  .cursor-line .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  // Guides
+  .indent-guide {
+    box-shadow: inset 1px 0 @syntax-indent-guide-color;
+  }
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  // Gutters
+  .gutter .line-number {
+    &.cursor-line {
+      background-color: @syntax-gutter-background-color;
+      color: @syntax-gutter-text-color-selected;
+    }
+
+    &.cursor-line-no-selection {
+      color: @syntax-gutter-text-color-selected;
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @syntax-result-marker-color;
+  }
+
+  // Cursor
+  .cursor {
+    border-color: @syntax-cursor-color;
+  }
+
+  .cursor-line {
+    background-color: @syntax-gutter-background-color;
+  }
+
+  // Selections
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
+  // Whitespace
+  .trailing-whitespace {
+    background-color: fadeout(@bad, 50%);
+  }
+
+  // Highlights
+  .bracket-matcher.region {
+    border: none;
+    background-color: @syntax-wrap-guide-color;
+    border-radius: .1rem;
+    box-shadow: 0 0 0 .2rem @syntax-wrap-guide-color;
+  }
+  .highlights .highlight.find-result .region,
+  .highlights .highlight.current-result .region {
+    border: 1px solid @syntax-result-marker-color;
+  }
+  .highlights .highlight.current-result .region {
+    background-color: @syntax-result-marker-color-selected;
+  }
+}

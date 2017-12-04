@@ -1,5 +1,3 @@
-@import "colors";
-
 atom-text-editor.vim-mode,
 atom-text-editor.vim-mode-plus,
 atom-text-editor.is-focused.vim-mode,
@@ -10,6 +8,11 @@ atom-text-editor.is-focused.vim-mode-plus {
 
     .cursor-line {
       background: @mode-background-normal;
+    }
+
+    .gutter .line-number.cursor-line {
+      color: @mode-normal;
+      background-color: @mode-background-normal;
     }
 
     .cursor {
@@ -24,6 +27,11 @@ atom-text-editor.is-focused.vim-mode-plus {
       background: @mode-background-insert;
     }
 
+    .gutter .line-number.cursor-line {
+      color: @mode-insert;
+      background-color: @mode-background-insert;
+    }
+
     .cursor {
       background-color: none;
       border-color: @mode-insert;
@@ -32,6 +40,16 @@ atom-text-editor.is-focused.vim-mode-plus {
 
   &.visual-mode,
   &.visual-mode {
+    .selection .region,
+    .cursor-line {
+      background-color: @mode-background-visual;
+    }
+
+    .gutter .line-number.cursor-line {
+      color: @mode-visual;
+      background-color: @mode-background-visual;
+    }
+
     .cursor {
       background-color: @mode-visual;
     }
@@ -43,6 +61,11 @@ atom-text-editor.is-focused.vim-mode-plus {
   &.with-count {
     .cursor-line {
       background: @mode-background-pending;
+    }
+
+    .gutter .line-number.cursor-line {
+      color: @mode-pending;
+      background-color: @mode-background-pending;
     }
 
     .cursor {
