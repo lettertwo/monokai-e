@@ -34,7 +34,7 @@
 // For language entity colors
 @syntax-color-variable: @syntax-text-color;
 @syntax-color-constant: @violet;
-@syntax-color-property: @azure;
+@syntax-color-property: @syntax-text-color;
 @syntax-color-value: @orange;
 @syntax-color-function: @cyan;
 @syntax-color-method: @sky;
@@ -47,16 +47,21 @@
 
 // Custom syntax variables
 @syntax-color-comment: @ignore;
+@syntax-color-brace: fade(@white, 75%);
 @syntax-color-string: @yellow;
-@syntax-color-definition: @blue;
 @syntax-color-embedded: @amber;
-@syntax-color-parameter: @sunset;
+@syntax-color-definition: @blue;
+@syntax-color-parameter: @white;
+@syntax-color-support: @magenta;
+@syntax-color-type: @turquoise;
+
+// Boolean values
 @syntax-color-true: @indigo;
 @syntax-color-false: @wine;
-@syntax-color-null: @blue-gray-dark;
+
+// Markup syntax variables
 @syntax-color-link: @green;
 @syntax-color-quote: @cyan;
-@syntax-color-brace: fade(@white, 75%);
 
 // Status
 @good: @green;

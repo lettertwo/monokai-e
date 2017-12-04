@@ -1,27 +1,29 @@
-@black:      #1F1F1F;
-@black-dark: darken(@black, 5%);
-@white:      #EEEEEE;
-@gray:       mix(@black, @white);
-@gray-dark:  darken(@gray, 30%);
-@gray-light: lighten(@gray, 25%);
+// monochrome
+@white: #F9F5DD;
+@black: #242424;
+
+// grayscale
+@gray-light: #716A60;
+@gray:       #434046;
+@gray-dark:  #3C393E;
 
 // primary
-@red:   #E21F17;
-@green: #A6E22E;
-@blue:  #467BE7;
+@red:   #F92672;
+@green: #B2E64C;
+@blue:  #5596F1;
 
 // secondary
-@yellow:  #FFF26D;
-@cyan:    #66D9EF;
-@magenta: #F92672;
+@yellow:  #E6DB7A;
+@cyan:    #66CCE1;
+@magenta: #FF5794;
 
 // tertiary
-@orange:     mix(@red, @yellow);
+@orange:     saturate(mix(@green, @magenta), 30%);
 @chartreuse: mix(@green, @yellow);
 @spring:     mix(@green, @cyan);
-@azure:      mix(@blue, @cyan);
+@azure:      desaturate(mix(@blue, @cyan), 30%);
 @violet:     mix(@blue, @magenta);
-@rose:       mix(@red, @magenta);
+@rose:       desaturate(mix(@red, @magenta), 30%);
 
 // quaternary
 @sunset:     mix(@magenta, @orange);
