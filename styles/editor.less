@@ -1,8 +1,25 @@
-// Editor styles
-
 atom-text-editor {
-  color: @syntax-text-color;
   background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  // Cursor
+  .cursor {
+    border-color: @syntax-cursor-color;
+  }
+
+  .cursor-line {
+    background-color: @syntax-gutter-background-color;
+  }
+
+  // Selections
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
+  // Whitespace
+  .trailing-whitespace {
+    background-color: fadeout(@bad, 50%);
+  }
 
   // Invisibles
   .invisible {
@@ -25,44 +42,6 @@ atom-text-editor {
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
   }
-
-  // Gutters
-  .gutter .line-number {
-    &.cursor-line {
-      background-color: @syntax-gutter-background-color;
-      color: @syntax-gutter-text-color-selected;
-    }
-
-    &.cursor-line-no-selection {
-      color: @syntax-gutter-text-color-selected;
-    }
-  }
-
-  .gutter .line-number.folded,
-  .gutter .line-number:after,
-  .fold-marker:after {
-    color: @syntax-result-marker-color;
-  }
-
-  // Cursor
-  .cursor {
-    border-color: @syntax-cursor-color;
-  }
-
-  .cursor-line {
-    background-color: @syntax-gutter-background-color;
-  }
-
-  // Selections
-  .selection .region {
-    background-color: @syntax-selection-color;
-  }
-
-  // Whitespace
-  .trailing-whitespace {
-    background-color: fadeout(@bad, 50%);
-  }
-
   // Highlights
   .bracket-matcher.region {
     border: none;
@@ -76,5 +55,47 @@ atom-text-editor {
   }
   .highlights .highlight.current-result .region {
     background-color: @syntax-result-marker-color-selected;
+  }
+
+  // Gutters
+  .gutter {
+
+    .line-number {
+      color: @syntax-gutter-text-color;
+      -webkit-font-smoothing: antialiased;
+
+      &.cursor-line {
+        color: @syntax-gutter-text-color-selected;
+        background-color: @syntax-gutter-background-color-selected;
+      }
+      &.cursor-line-no-selection {
+        background-color: transparent;
+      }
+
+      .icon-right {
+        color: @syntax-text-color;
+      }
+    }
+
+    &:not(.git-diff-icon) .line-number.git-line-removed {
+      &.git-line-removed::before {
+        bottom: -3px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 25px;
+        border-bottom: 1px dotted fade(@syntax-color-removed, 50%);
+        pointer-events: none;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @syntax-result-marker-color;
   }
 }
